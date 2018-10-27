@@ -8,35 +8,35 @@
 
 <h2>Data Stream Aggregations</h2>
 
-  What if to define table structure with aggregation functions. The table scheme could easy listen to the event stream and to related tables.
+  What if to define table structure with aggregation functions. The table scheme could easy listen to the event stream and changes in related tables.
   The changes could be transformed and propagated to the aggregations where it could be mixed with another sources.
 
 <pre>
-  customer {
-      "type": "object",
-      "properties": {
-          "date": { "type": "string" },
-          "customer": { "type": "string" },
-          "amount": { "type": "string" }
-      },
-      "primary_key":["date", "customer"],
-      "propagate":{
-          "detail":[{
-              "key":["customer"],
-              "fields":{"total":"amount"}
-          }]
-      }
-  }
-  
-  detail {
-      "type": "aggregate",
-      "properties": {
-          "customer": { "type": "string" },
-          "total": { "type": "string" }
-      },
-      "primary_key":["customer"],
-      "sum":["amount"]
-  }
+    customer {
+        "type": "object",
+        "properties": {
+            "date": { "type": "string" },
+            "customer": { "type": "string" },
+            "amount": { "type": "string" }
+        },
+        "primary_key":["date", "customer"],
+        "propagate":{
+            "detail":[{
+                "key":["customer"],
+                "fields":{"total":"amount"}
+            }]
+        }
+    }
+
+    detail {
+        "type": "aggregate",
+        "properties": {
+            "customer": { "type": "string" },
+            "total": { "type": "string" }
+        },
+        "primary_key":["customer"],
+        "sum":["amount"]
+    }
 </pre>
 
 <a href="https://github.com/kalmyk/fox-wamp">Check on GitHub</a>
