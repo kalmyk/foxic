@@ -6,11 +6,14 @@
 
 <body>
 
-<h2>Data Stream Aggregations</h2>
+<h2>Data Stream Aggregation Table</h2>
 
- What if to define table structure with aggregation functions.
- The table scheme could easy listen to the event stream and changes in related tables.
- The changes could be transformed and propagated to the aggregations where it could be mixed with another sources.
+ What if to define table structure with aggregation functions along?
+ The table scheme could easy listen to the event stream and do changes 
+ accordingly in the related tables. The changes could be transformed and
+ propagated as same events to the aggregation tables
+ where it could be mixed with another sources. In general the idea looks like
+ materialized view that is based on event stream.
 
 <pre>
     customer {
