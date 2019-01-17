@@ -8,15 +8,24 @@
 
 <h2>Data Stream Aggregation Table</h2>
 
- What if to define table structure with aggregation functions along?
- The table scheme could easy listen to the event stream and do changes 
- accordingly in the related tables. The changes could be transformed and
- propagated as same events to the aggregation tables
- where it could be mixed with another sources. In general the idea looks like
- materialized view that is based on event stream.
+What if to define table structure with aggregation functions along?
+
+The functionality aimed to provide rapid access to continuously changed
+data to the web application.
+
+The idea is to have definitions of cross table relations and calculation rules in one place. 
+Such table scheme could easy listen to the events stream and do changes 
+in the related tables accordingly.
+
+The changes in tables could be transformed and
+propagated as same events to the another aggregation tables
+where it could be mixed with another sources.
+Aggregate engine provides data change events for the subscribed clients.
+
+In general the idea looks like materialized view that is based on event stream.
 
 <pre>
-    customer {
+    "invoice": {
         "type": "object",
         "properties": {
             "date": { "type": "string" },
@@ -30,9 +39,9 @@
                 "fields":{"total":"amount"}
             }]
         }
-    }
+    },
 
-    detail {
+    "detail": {
         "type": "aggregate",
         "properties": {
             "customer": { "type": "string" },
