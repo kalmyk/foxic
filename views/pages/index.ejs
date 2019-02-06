@@ -22,7 +22,8 @@ propagated as same events to the another aggregation tables
 where it could be mixed with another sources.
 Aggregate engine provides data change events for the subscribed clients.
 
-In general the idea looks like materialized view that is based on event stream.
+In general the idea looks like materialized view that is gathered on event stream.
+The information schema provides ability to validate incoming messages against the schema.
 
 <pre>
     "invoice": {
@@ -60,6 +61,11 @@ In general the idea looks like materialized view that is based on event stream.
 
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+Here you can find a chat demo that uses
+<a href="https://reactjs.org">react</a> and
+<a href="https://github.com/jamiebuilds/unstated">unstated</a>
+as propagation platform of the events.
 
 </body>
 
