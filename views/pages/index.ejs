@@ -9,27 +9,25 @@
 <h2>Data Stream Aggregation Table</h2>
 
 <p>
-    What if to define table structure with aggregation functions along?
+    What if to define table structure with aggregation functions in the same information schema?
 </p>
-
-<p>
-    The functionality aimed to provide rapid access to continuously changed
-    data to the web application.
-</p>
-
 <p>
     The idea is to have definitions of cross table relations and calculation rules in one place. 
-    Such table scheme could easy listen to the events stream and do changes 
+    Such table scheme could easy listen to the events stream and do changes
     in the related tables accordingly.
 </p>
-
+<p>
+    The functionality aimed to provide rapid access to continuously changed
+    data to the modern web application.
+</p>
 <p>
     The changes in tables could be transformed and
-    propagated as same events to the another aggregation tables
+    propagated as same events to the another aggregation tables 
     where it could be mixed with another sources.
     Aggregate engine provides data change events for the subscribed clients.
+    In the same way standard web queue could subscribe to such the aggregated
+    event sources.
 </p>
-
 <p>
     In general the idea looks like materialized view that is gathered on event stream.
     The information schema provides ability to validate incoming messages against the schema.
