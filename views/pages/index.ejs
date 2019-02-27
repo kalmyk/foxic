@@ -41,11 +41,11 @@
             "customer": { "type": "string" },
             "amount": { "type": "string" }
         },
-        "primary_key":["date", "customer"],
+        "primary_key":[ "date", "customer" ],
         "propagate":{
             "detail":[{
-                "key":["customer"],
-                "fields":{"total":"amount"}
+                "key": [ "customer" ],
+                "fields": { "total": "amount" }
             }]
         }
     },
@@ -56,8 +56,8 @@
             "customer": { "type": "string" },
             "total": { "type": "string" }
         },
-        "primary_key":["customer"],
-        "sum":["amount"]
+        "primary_key": [ "customer" ],
+        "sum": [ "amount" ]
     }
 </pre>
 
